@@ -4,7 +4,7 @@
 É necessário para fazer este tutorial que em sua máquina esteja intalado:
 
 - [Visual Studio Code](https://code.visualstudio.com)
-- [Extensões Recomendadas](#a0-instalação-de-extenções)
+- [Extensões Recomendadas](#extensões)
 - [Nodejs](https://nodejs.org/)
 
 Caso não tenha algun destes requisitos em sua máquina, vá para a [configuração do abiente virtual](#configuração-do-ambiente-virtual) no fim desta página.
@@ -20,7 +20,7 @@ Caso não tenha algun destes requisitos em sua máquina, vá para a [configuraç
   - IMPORTANTE! Não esquedo do ponto no final
   - Aceite as seguintes especificações:
 
-[especificações de projeto](./imagensreadme/especificacoes.png)
+![especificações de projeto](./imagensreadme/especificacoes.png)
 
 - Rode o seguinte comando para instalar as dependêcias:
   ```shell
@@ -28,7 +28,7 @@ Caso não tenha algun destes requisitos em sua máquina, vá para a [configuraç
   ```
 - vá para a pasta src em assets e exclua todo o conteúdo do arquivo ``main.css``
 
-[assets](./imagensreadme/assets.png)
+![assets](imagensreadme/assets.png "assets")
 
 - Exclua todos os arquivos dentro de ``components`` e também o arquivo ``AboutView.vue`` dentro de ``views``
 - Após isso exclua o seguinte código do ``index.js`` dentro de routers 
@@ -306,5 +306,5 @@ Para instalar o node no Windows acesse o site do [Nodejs](https://nodejs.org/en)
 
 1. Vá para a aba de Dowload
 2. Altere a versão que deseja instalar para LTS, e selecione as configuraçõe da máquina como na imagem:
-   [imagem de instalção do node](./imagensreadme/node.png)
+   ![imagem de instalção do node](./imagensreadme/node.png)
 3. Após a instalação do arquivo rode-o, aceite oque tiver que aceitar e pronto. Seu node está instalado e pronto para o uso.
