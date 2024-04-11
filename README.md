@@ -7,7 +7,7 @@
 - [Extensões Recomendadas](#extensões)
 - [Nodejs](https://nodejs.org/)
 
-Caso não tenha algun destes requisitos em sua máquina, vá para a [configuração do abiente virtual](#configuração-do-ambiente-virtual) no fim desta página.
+Caso não tenha algum destes requisitos em sua máquina, vá para a [configuração do abiente virtual](#configuração-do-ambiente-virtual) no fim desta página.
 
 # 1-Criação do Projeto
 
@@ -31,7 +31,7 @@ Caso não tenha algun destes requisitos em sua máquina, vá para a [configuraç
 ![assets](imagensreadme/assets.png "assets")
 
 - Exclua todos os arquivos dentro de ``components`` e também o arquivo ``AboutView.vue`` dentro de ``views``
-- Após isso exclua o seguinte código do ``index.js`` dentro de routers 
+- Após isso exclua o seguinte código do ``index.js`` dentro de router
 
 ```js
 {
