@@ -13,25 +13,26 @@ Caso não tenha algum destes requisitos em sua máquina, vá para a [configuraç
 
 - Crie uma pasta para o projeto
 - Após criada a pasta abra-a no VS code
-- Agora inicie um projeto em vue:
+- Agora inicie um projeto em Vue:
   ```shell
   npm init vue@latest .
   ```
-  - IMPORTANTE! Não esquedo do ponto no final
-  - Aceite as seguintes especificações:
+  - IMPORTANTE! Não esquedoça do ponto no final!
+    - >Este ponto ao fim da linha de comando indica que o projeto será criado na pasta atual em que você está executando o comando npm init. Portanto, antes de executar o comando para iniciar um projeto em Vue, verifique se a pasta em que você deseja criar o projeto está aberta no terminal. Para confirmar, execute o comando `pwd` e será exibido o caminho da pasta atual.
+  - Confirmado se o caminho está correto, após executar o comando para iniciar um projeto em VueJS, aceite as seguintes especificações:
 
 ![especificações de projeto](./imagensreadme/especificacoes.png)
 
-- Rode o seguinte comando para instalar as dependêcias:
+- Execute o seguinte comando para instalar as dependêcias:
   ```shell
   npm install
   ```
-- vá para a pasta src em assets e exclua todo o conteúdo do arquivo ``main.css``
+- Vá para a pasta `src`, localizado na pasta assets e exclua todo o conteúdo do arquivo `main.css`.
 
 ![assets](imagensreadme/assets.png "assets")
 
-- Exclua todos os arquivos dentro de ``components`` e também o arquivo ``AboutView.vue`` dentro de ``views``
-- Após isso exclua o seguinte código do ``index.js`` dentro de router
+- Exclua todos os arquivos dentro de `components` e também o arquivo `AboutView.vue`, localizado na pasta `views`.
+- Também exclua o seguinte código do arquivo `index.js`, que está situado dentro da pasta `router`.
 
 ```js
 {
@@ -43,7 +44,7 @@ Caso não tenha algum destes requisitos em sua máquina, vá para a [configuraç
       component: () => import('../views/AboutView.vue')
     }
 ```
-- deixando apenas:
+#### O novo conteúdo do arquivo `index.js` deverá ser apenas o apresentado abaixo:
 
 ```js
 import { createRouter, createWebHistory } from 'vue-router'
@@ -61,10 +62,9 @@ const router = createRouter({
 })
 
 export default router
-
 ```
 
-- E Também exclua o conteúdo de ``App.vue`` e , deixando apenas:
+#### Exclua também o conteúdo do arquivo `App.vue`, preservando apenas o conteúdo abaixo:
 ```html
 <script setup>
 
@@ -77,39 +77,39 @@ export default router
 <style scoped>
 
 </style>
-
 ```
 
-- faça o mesmo com ``HomeView.vue`` dentro de views
+Faça o mesmo com o arquivo `HomeView.vue`, que está situado na pasta `views`.
 
-- Agora execute o seguite comando para o projetos rodar em uma porta local:
+Agora, após todas as alterações, execute o seguinte comando no terminal para executar o projeto, que ficará disponível para acesso em uma porta local:
 
 ```shell
 npm run dev
 ```
-- IMPORTANTE! A partir de agora abra outro terminal e mantenha este rodando para ver o andamento da aplicação
 
-Pronto seu projeto foi criado
+**IMPORTANTE! A partir de agora abra outro terminal e mantenha este rodando para ver o andamento da aplicação.**
+
+## <u>Pronto! Seu projeto foi criado!!</u>
 
 # 2-Components
 
-Um ``component`` é como o nome sugere um componente de uma página. O grande diferencial de um component do ``Vue`` para uma ``div`` qualquer é o armazenamento de script, CSS e reutilizabilidade. 
+Um `component` é como o nome sugere, ser um componente de uma página. O grande diferencial de um `component` do `Vue` para uma `div` qualquer é o armazenamento de script, CSS e reusabilidade.
 
-Por exemplo um botão que se repete diversas vezes em diversas páginas, normalmente você teria que recria o botão em todas as páginas com o CSS e script, porém com o ``Vue`` você cria este botão apenas uma vez e apenas o importa para as páginas que deseja.
+Por exemplo, um botão que se repete diversas vezes em diversas páginas você normalmente teria que recriar o botão em todas as páginas com o CSS e script, porém com o `Vue` você cria este botão apenas uma vez e apenas o importa para as páginas que deseja reutiliar.
 
-Para ver isso na prática criaremos dois ``components``, um menu de navegação e um formulário.
+Para ver isso na prática criaremos dois `components`, um menu de navegação e um formulário.
 
-- Crie um arquivo chamado ``MenuNav.vue`` em components
-- Deixe-o como o ``App.vue``
-- Agora crie um ``header`` a seu gosto no ``template``
-- Estilize-o como desejar
-- Agora Dentro de ``App.vue`` importe o component
+- Crie um arquivo chamado `MenuNav.vue` na pasta `components`.
+- Deixe-o com o mesmo conteúdo do arquivo `App.vue`.
+- Agora crie um `header` a seu gosto na pasta `template`.
+- Estilize-o como desejar.
+- Agora, dentro do arquivo `App.vue` importe o `component`.
   ```html
   <script setup>
     import MenuNav from './components/MenuNav.vue'
   </script>
   ```
-- Agora adicione-o ao app: 
+- Agora adicione-o ao `App.vue`: 
     ```html
     <template>
         <header>
@@ -117,10 +117,10 @@ Para ver isso na prática criaremos dois ``components``, um menu de navegação 
         </header>
     </template>
     ``` 
-  - Perceba que agora o menu é exibido mesmo não tendo sido criado no ``App.vue``
-  - É desta maneira para todos os components que desejar adicionar  
-- Agora para fazer o formulário crie o arquivo ``FormUser.vue``
-- E adicione o código:
+Perceba que agora o menu é exibido, mesmo não tendo sido criado no `App.vue`. É desta maneira para todos os components que desejar adicionar, basta importa-los e alocar no `template`. Lembrando que esta prática é ainda mais valiosa quando se trata de um `component` que será reutilizado em diversas páginas.
+
+Agora para fazer o formulário crie o arquivo `FormUser.vue` na pasta `components`, e adicione o código abaixo:
+
 ```html
 <template>
     <form>
@@ -143,7 +143,9 @@ input {
 }
 </style>
 ```
-- Agora Importe-o para ``HomeView.vue``:
+
+Agora, importe-o para `HomeView.vue`, usando o seguinte código:
+
 ```html
 <script setup>
 import FormUser from '../components/FormUser.vue';
@@ -154,29 +156,31 @@ import FormUser from '../components/FormUser.vue';
 ```html
 <template>
   <main>
-    <h1>Pagina inicial</h1>
+    <h1>Página inicial</h1>
     <FormUser />
   </main>
 </template>
 ```
-- Perceba que o formulário não é exibido. Arrumaremos isto no Próximo passo
+
+Perceba que o formulário ainda não é exibido. Tudo bem, pois faremos uma implementação correspondente na sequência.
 
 # 3-VueRouter
 
-VueRouter é a maneira de fazer uma applição com mais de uma página no vue, para isso nós utilizamos as ``views``, que são diferentes telas de visualização
+VueRouter é o recurso que possibilita o desenvolvimento de uma aplicação com navegação no Vue. Para isso utilizaremos as `views`, que são diferentes telas de visualização.
 
-Um exemplo é a ``HomeView.vue`` que ja utilizamos anteriormente
+Um exemplo sobre a navegação é a `HomeView.vue`, que já foi utilizada anteriormente.
 
-Agora criaremos outra view para utilizarmos e aprensetaremos as views para o usuário
+Agora criaremos outra `view` e apresentaremos as `views` para o usuário.
 
-- Para exibir a view que ja existe utilizaremos o ``RouterView`` para isso vamos importa-lo no app:
+- Para exibir a `view` que já existe, utilizaremos o `RouterView`. Importaremos o recurso no `App.vue`, usando o seguinte código:
 ```html
 <script setup>
 import { RouterView } from 'vue-router'
 ...
 </script>
 ```
-- Agora vamos apresentar a view para o usuário da mesma maneira que fizemos com o component no app:
+
+Agora vamos apresentar a view para o usuário, da mesma maneira que fizemos com o `component` no `App.vue`:
 ```html
 <template>
     ...
@@ -184,9 +188,12 @@ import { RouterView } from 'vue-router'
 </template>
 ```
 
-- Perceba que agora o Formulário é exibido. Isso acontece porque o alocamos na view ``HomeView.vue`` que antes não era exibida
-- Agora criaremos uma segunda view para que possamos alternar entre elas
-- Crie outro um arquivo chamado ``PicanhaView.vue`` dentro da pasta ``views`` e adicione a seguinte lista:
+Perceba que agora o Formulário é exibido. Isso acontece porque o alocamos na view `HomeView.vue`, que antes não era exibidi. Agora, com o `RouterView`, a view é exibida.
+
+Agora criaremos uma segunda `view` para que possamos navegar entre as `views`.
+
+
+Crie outro um arquivo chamado `PicanhaView.vue` dentro da pasta `views` e adicione o seguinte código:
 ```html
 <template>
     <h1>PICANHA</h1>
@@ -198,12 +205,15 @@ import { RouterView } from 'vue-router'
         <li>70</li>
     </ul>
 </template>
-
 ```
-- Agora importe e aloque o component ``FormUser`` da mesma maneira que fizemos anteriormente na Home
-- Agora iremos permitir que o usuário alterne entre as ``views``
-- Para isso vamos utilizar o ``RouterLink`` e component ``MenuNav`` que criamos anteriormente
-- Antes disso vá em ``index.js`` na pasta router e adicione o seguinte código:
+
+Agora importe o `component` que foi criado e o aloque na `FormUser`, da mesma maneira que fizemos anteriormente na `Home`.
+
+Assim será permitido que o usuário navegue entre as `views` que foram criadas.
+
+Para isso vamos utilizar o `RouterLink` e o component `MenuNav`, que foi criado anteriormente.
+
+Antes disso vá em `index.js` na pasta router e adicione o seguinte código ao código já existente no arquivo referido:
 ```js
 routes: [
     ...
@@ -214,32 +224,34 @@ routes: [
     }
   ]
 ```
-- Aqui estamos definindo que a url ``http://localhost:5173/picanha`` irá exibir a view ``PicanhaView.vue``
-- Agora importe o ``RouterLink`` no component ``MenuNav.vue``:
+
+Aqui estamos definindo que a url `http://localhost:5173/picanha` exibirá a `view` `PicanhaView.vue`.
+
+Agora importe o `RouterLink` no component `MenuNav.vue`:
 ```html
 <script setup>
 import { RouterLink } from 'vue-router'
 </script>
 ```
-- Aloque-os da seguinte maneira:
-```html
 
+Aloque-os da seguinte maneira:
+```html
 <template>
     <RouterLink to="/">home</RouterLink>
     <RouterLink to="/picanha">picanha</RouterLink>    
 </template>
 ```
-- Aqui o ``RouterLink`` funciona semelhante a uma tag ``a``, desta maneira dizemos que o ``home`` irá alterar o url para ``http://localhost:5173/`` e picanha irá altera-la para ``http://localhost:5173/picanha``
-- Perceba que agora é possível alternar entre as views
 
-Assim concluímos este tutorial. Qualquer contribuição/sugetão é bem vinda.
+Aqui o `RouterLink` funciona semelhante a uma tag `<a>`. Desta maneira dizemos que o `home` corresponde com a URLa `http://localhost:5173/` e picanha corresponde com a URL `http://localhost:5173/picanha`. Ao clicar, o usuário poderá navegar entre as `views`.
+
+Assim concluímos este tutorial. Qualquer contribuição/sugestão é bem vinda.
  
-# configuração  do ambiente virtual
+# Configuração do Ambiente
 
-A configuração só precisa ser feita uma vez em cada computador
+A configuração só precisa ser feita uma vez em cada computador.
 
-## instalação do VS code
-Para instalar o vs code siga os seguintes passos:
+## instalação do VSCode
+Para instalar o VSCode, siga os seguintes passos:
 
 **No Ubuntu/Mint e derivados:**
 
@@ -257,14 +269,14 @@ Digite o seguinte código no terminal do linux:
 yay -Syu visual-studio-code-bin
 ```
 
-**No Windows**
+**No Windows:**
 
-1. Acesse o site do [VS code](https://code.visualstudio.com)
-2. Clique em "Dowload para Windows" ou "Dowload for Windows" dependendo do navegador
-3. Após instalar o arquivo de setup rode-o, aceite oque tiver que aceitar e pronto. Seu VS code está pronto para o uso
+1. Acesse o site do [VSCode](https://code.visualstudio.com);
+2. Clique em "Dowload para Windows" ou "Dowload for Windows" dependendo do navegador;
+3. Após executar o arquivo de instalação, seguir os passos para instalação e aceitar as condições apresentadas, seu VSCode estará pronto para uso.
 
 ## Extensões
-As extensões recomendadas para o uso do vueJs são:
+As extensões recomendadas para o uso do VueJS são:
 
 - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -274,37 +286,37 @@ As extensões recomendadas para o uso do vueJs são:
 - [Brazilian Portuguese - Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian)
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons)
 
-Para instalar as extensões basta pesquisa-las na aba de extensões do VS code ou clicar nos links e instalar
+Para instalar as extensões, basta pesquisá-las na aba de extensões do VSCode ou clicar nos links dispostos acima e proceder com a instalação.
 
-## Instalização ou atualização do Nodejs
+## Instalação ou atualização do NodeJS
 
-O [Vue.js](https://vuejs.org) é um framework de [Nodejs](https://nodejs.org/), portanto necessita que ele esteja instalado e atualizado.
+O [VueJS](https://vuejs.org) é um framework de [NodeJS](https://nodejs.org/), portanto necessita que ele esteja instalado e atualizado.
 
 Para intalar ou atualizar:
 
 **No Linux**
 
-Recomenda-se utilizar o `nvm`,  O nvm é gerenciador de versões do NodeJs, desenvolvido para ser instalado utilizando a conta de um usuário final.
+Recomenda-se utilizar o `nvm`, que é o gerenciador de versões do NodeJS, desenvolvido para ser instalado utilizando a conta de um usuário final.
 
-Para instalar ou atualizar o `nvm` utilize o seguite código no terminal (Não faz difereça ser no do linux ou do VS code):
+Para instalar ou atualizar o `nvm`, execute o seguinte código no terminal (independe do Sistema Operacional utilizado):
 
-~~~shell
+```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-~~~
+```
 
-Após isso feche o terminal, abra um novo e instale a versão LTS do node:
+Após isso feche o terminal, abra um novo e instale a versão LTS do NodeJS:
 
-~~~shell
+```shell
 nvm install --lts
-~~~
+```
 
-Pronto o node está instalado e atulizado pronto para o uso.
+Agora o NodeJS estará instalado e atulizado, pronto para o uso.
 
 **No Windows/Mac**
 
-Para instalar o node no Windows acesse o site do [Nodejs](https://nodejs.org/en) e siga estes passos:
+Para instalar o NodeJS no Windows, acesse o site do [NodeJS](https://nodejs.org/en) e siga estes passos:
 
-1. Vá para a aba de Dowload
+1. Vá para a aba de Download;
 2. Altere a versão que deseja instalar para LTS, e selecione as configuraçõe da máquina como na imagem:
    ![imagem de instalção do node](./imagensreadme/node.png)
-3. Após a instalação do arquivo rode-o, aceite oque tiver que aceitar e pronto. Seu node está instalado e pronto para o uso.
+3. Após o download do arquivo de instalação, executeo, siga os passos para a instalação e, aceitando as condições apresentadas, o NodeJS estará instalado e pronto para uso.
